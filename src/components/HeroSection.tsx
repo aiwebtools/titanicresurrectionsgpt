@@ -2,9 +2,11 @@
 import React, { useEffect, useRef } from 'react';
 import { ArrowDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const HeroSection = () => {
   const youtubeContainerRef = useRef<HTMLDivElement>(null);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     // Initialize YouTube player when API is ready
@@ -23,7 +25,7 @@ const HeroSection = () => {
         },
         events: {
           onReady: (event) => {
-            event.target.setPlaybackQuality('hd1080');
+            event.target.setPlaybackQuality(isMobile ? 'hd720' : 'hd1080');
             event.target.playVideo();
             
             // Try to unmute immediately - might still require user interaction on some browsers
@@ -53,7 +55,7 @@ const HeroSection = () => {
       // Clean up
       delete window.onYouTubeIframeAPIReady;
     };
-  }, []);
+  }, [isMobile]);
 
   const scrollToContent = () => {
     document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' });
@@ -96,11 +98,17 @@ const HeroSection = () => {
           </div>
           
           {/* YouTube Video Section with Glassmorphism Frame */}
-          <div className="lg:w-1/2 relative">
+          <div className="lg:w-1/2 w-full relative">
             <div className="glass-panel rounded-2xl overflow-hidden shadow-2xl relative">
               <div className="absolute inset-0 bg-ocean-deep/20 pointer-events-none z-10"></div>
               <div ref={youtubeContainerRef} className="aspect-video w-full">
-                <div id="youtube-player"></div>
+                {/* Apply inline style for mobile compatibility */}
+                <div id="youtube-player" style={{
+                  position: 'relative',
+                  width: '100%',
+                  height: '100%',
+                  minHeight: isMobile ? '200px' : '300px'
+                }}></div>
               </div>
             </div>
             <div className="absolute -bottom-6 -right-6 h-24 w-24 bg-gold/10 rounded-full blur-2xl"></div>
