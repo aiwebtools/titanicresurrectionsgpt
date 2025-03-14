@@ -68,7 +68,7 @@ const Header = () => {
               className="gold-button ml-2" 
               onClick={() => window.open("https://chatgpt.com/g/g-67d4a5f65f64819196609472b3b6ed56-titanic-resurrections-gpt", "_blank")}
             >
-              Experience Now
+              Experience Titanic Resurrections GPT NOW
             </Button>
           </nav>
 
@@ -125,7 +125,7 @@ const Header = () => {
                 setIsMobileMenuOpen(false);
               }}
             >
-              Experience Now
+              Experience Titanic Resurrections GPT NOW
             </Button>
           </nav>
         </div>

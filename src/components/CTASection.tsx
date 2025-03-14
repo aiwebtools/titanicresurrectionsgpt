@@ -30,7 +30,7 @@ const CTASection = () => {
               className="gold-button text-lg py-6 px-8"
               onClick={() => window.open("https://chatgpt.com/g/g-67d4a5f65f64819196609472b3b6ed56-titanic-resurrections-gpt", "_blank")}
             >
-              Experience Titanic Resurrections GPT
+              Experience Titanic Resurrections GPT NOW
             </Button>
           </div>
         </div>

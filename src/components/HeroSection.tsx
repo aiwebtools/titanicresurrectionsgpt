@@ -85,7 +85,7 @@ const HeroSection = () => {
                 className="gold-button text-base"
                 onClick={() => window.open("https://chatgpt.com/g/g-67d4a5f65f64819196609472b3b6ed56-titanic-resurrections-gpt", "_blank")}
               >
-                Begin Your Journey
+                Experience Titanic Resurrections GPT NOW
               </Button>
               <Button 
                 variant="outline" 
