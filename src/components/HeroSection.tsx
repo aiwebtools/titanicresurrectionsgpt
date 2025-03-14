@@ -25,10 +25,21 @@ const HeroSection = () => {
           onReady: (event) => {
             event.target.setPlaybackQuality('hd1080');
             event.target.playVideo();
-            // Unmute after playback starts (user interaction may be required in some browsers)
+            
+            // Try to unmute immediately - might still require user interaction on some browsers
+            try {
+              event.target.unMute();
+              // Set volume to 100%
+              event.target.setVolume(100);
+            } catch (error) {
+              console.log("Initial unmute attempt failed, will try again after playback starts");
+            }
+            
+            // Second attempt to unmute after a short delay
             setTimeout(() => {
               try {
                 event.target.unMute();
+                event.target.setVolume(100);
               } catch (error) {
                 console.log("Could not unmute automatically, user interaction may be needed");
               }
