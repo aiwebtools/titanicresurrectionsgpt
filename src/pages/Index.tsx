@@ -21,34 +21,6 @@ const Index = () => {
     tag.src = "https://www.youtube.com/iframe_api";
     const firstScriptTag = document.getElementsByTagName('script')[0];
     firstScriptTag.parentNode?.insertBefore(tag, firstScriptTag);
-    
-    // Initialize YouTube player when API is ready
-    window.onYouTubeIframeAPIReady = () => {
-      new window.YT.Player('youtube-player', {
-        videoId: 'u7sTTv_A3IQ',
-        playerVars: {
-          autoplay: 1,
-          mute: 0,
-          controls: 1,
-          playsinline: 1,
-          modestbranding: 1,
-          rel: 0,
-          showinfo: 0,
-          origin: window.location.origin
-        },
-        events: {
-          onReady: (event) => {
-            event.target.setPlaybackQuality('hd1080');
-            event.target.playVideo();
-          }
-        }
-      });
-    };
-    
-    return () => {
-      // Clean up
-      delete window.onYouTubeIframeAPIReady;
-    };
   }, []);
 
   return (
@@ -68,13 +40,5 @@ const Index = () => {
     </div>
   );
 };
-
-// Add the YouTube interface to the Window type
-declare global {
-  interface Window {
-    YT: any;
-    onYouTubeIframeAPIReady: () => void;
-  }
-}
 
 export default Index;

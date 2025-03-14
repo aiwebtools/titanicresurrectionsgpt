@@ -4,14 +4,44 @@ import { ArrowDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const HeroSection = () => {
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const youtubeContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.play().catch(error => {
-        console.error("Autoplay failed:", error);
+    // Initialize YouTube player when API is ready
+    window.onYouTubeIframeAPIReady = () => {
+      new window.YT.Player('youtube-player', {
+        videoId: 'XlWVaz5bw08', // Updated to the new video ID
+        playerVars: {
+          autoplay: 1,
+          mute: 1, // Start muted to comply with autoplay policies
+          controls: 1,
+          playsinline: 1,
+          modestbranding: 1,
+          rel: 0,
+          showinfo: 0,
+          origin: window.location.origin
+        },
+        events: {
+          onReady: (event) => {
+            event.target.setPlaybackQuality('hd1080');
+            event.target.playVideo();
+            // Unmute after playback starts (user interaction may be required in some browsers)
+            setTimeout(() => {
+              try {
+                event.target.unMute();
+              } catch (error) {
+                console.log("Could not unmute automatically, user interaction may be needed");
+              }
+            }, 1000);
+          }
+        }
       });
-    }
+    };
+
+    return () => {
+      // Clean up
+      delete window.onYouTubeIframeAPIReady;
+    };
   }, []);
 
   const scrollToContent = () => {
@@ -54,19 +84,13 @@ const HeroSection = () => {
             </div>
           </div>
           
-          {/* Video Section with Glassmorphism Frame */}
+          {/* YouTube Video Section with Glassmorphism Frame */}
           <div className="lg:w-1/2 relative">
             <div className="glass-panel rounded-2xl overflow-hidden shadow-2xl relative">
-              <div className="absolute inset-0 bg-ocean-deep/20 pointer-events-none"></div>
-              <video 
-                ref={videoRef}
-                className="w-full rounded-2xl"
-                src="https://youtu.be/u7sTTv_A3IQ?si=ua-xPrTnFA-NaNn1"
-                controls
-                autoPlay
-                muted={false}
-                poster="/placeholder.svg"
-              ></video>
+              <div className="absolute inset-0 bg-ocean-deep/20 pointer-events-none z-10"></div>
+              <div ref={youtubeContainerRef} className="aspect-video w-full">
+                <div id="youtube-player"></div>
+              </div>
             </div>
             <div className="absolute -bottom-6 -right-6 h-24 w-24 bg-gold/10 rounded-full blur-2xl"></div>
             <div className="absolute -top-6 -left-6 h-16 w-16 bg-ocean-light/20 rounded-full blur-2xl"></div>
