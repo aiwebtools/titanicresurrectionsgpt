@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Anchor, Phone, Mail } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 const Footer = () => {
   return (
@@ -61,6 +62,16 @@ const Footer = () => {
                 >
                   More AI Tools
                 </a>
+              </li>
+              <li className="pt-2">
+                <h4 className="text-sm font-semibold text-white mb-2">You May Also Like:</h4>
+                <Button 
+                  variant="outline" 
+                  className="border-ocean-light/30 hover:bg-ocean-light/10 hover:text-gold text-ice-light w-full justify-start text-sm"
+                  onClick={() => window.open("https://chatgpt.com/g/g-67d59eb431b88191888701b820de0ef8-the-salem-witch-trials-ai", "_blank")}
+                >
+                  The Salem Witch Trials AI
+                </Button>
               </li>
             </ul>
           </div>
