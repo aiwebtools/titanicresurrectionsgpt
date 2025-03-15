@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 import { ArrowDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -25,7 +24,16 @@ const HeroSection = () => {
         },
         events: {
           onReady: (event) => {
-            event.target.setPlaybackQuality(isMobile ? 'hd720' : 'hd1080');
+            // Set high quality by default - 1080p for desktop, 720p for mobile
+            const quality = isMobile ? 'hd720' : 'hd1080';
+            console.log(`Setting video quality to: ${quality}`);
+            event.target.setPlaybackQuality(quality);
+            
+            // Force quality setting again after a short delay to ensure it takes effect
+            setTimeout(() => {
+              event.target.setPlaybackQuality(quality);
+            }, 500);
+            
             event.target.playVideo();
             
             // Try to unmute immediately - might still require user interaction on some browsers
