@@ -63,9 +63,10 @@ const HeroSection = () => {
 
   return (
     <section className="relative min-h-screen pt-24 pb-16 flex flex-col items-center justify-center overflow-hidden">
-      {/* Animated ocean waves background */}
+      {/* Animated ocean waves background with enhanced animation */}
       <div className="ocean-wave"></div>
       <div className="second-ocean-wave"></div>
+      <div className="third-ocean-wave"></div>
       
       <div className="container mx-auto px-6 relative z-10">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12">

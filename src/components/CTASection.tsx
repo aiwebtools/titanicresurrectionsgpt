@@ -6,8 +6,10 @@ import { Ship } from 'lucide-react';
 const CTASection = () => {
   return (
     <section className="py-24 relative overflow-hidden">
-      {/* Wave background */}
+      {/* Enhanced wave background animations */}
       <div className="ocean-wave opacity-30"></div>
+      <div className="second-ocean-wave opacity-20"></div>
+      <div className="third-ocean-wave opacity-15"></div>
       
       <div className="container mx-auto px-6 relative z-10">
         <div className="ice-panel rounded-3xl p-10 lg:p-16 text-center relative overflow-hidden">

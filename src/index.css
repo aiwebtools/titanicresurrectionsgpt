@@ -67,9 +67,10 @@
     width: 200%;
     height: 100%;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1200 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0v46.29c47.79 22.2 103.59 32.17 158 28 70.36-5.37 136.33-33.31 206.8-37.5 73.84-4.36 147.54 16.88 218.2 35.26 69.27 18 138.3 24.88 209.4 13.08 36.15-6 69.85-17.84 104.45-29.34C989.49 25 1113-14.29 1200 52.47V0z' fill='%231a5783' fill-opacity='.25'/%3E%3C/svg%3E");
-    opacity: 0.6;
-    animation: wave 15s linear infinite;
+    opacity: 0.7;
+    animation: oceanWave 15s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
     z-index: -1;
+    transform-origin: center bottom;
   }
   
   .second-ocean-wave {
@@ -77,10 +78,24 @@
     width: 200%;
     height: 100%;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1200 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0v46.29c47.79 22.2 103.59 32.17 158 28 70.36-5.37 136.33-33.31 206.8-37.5 73.84-4.36 147.54 16.88 218.2 35.26 69.27 18 138.3 24.88 209.4 13.08 36.15-6 69.85-17.84 104.45-29.34C989.49 25 1113-14.29 1200 52.47V0z' fill='%232c7bb6' fill-opacity='.15'/%3E%3C/svg%3E");
-    opacity: 0.5;
-    animation: wave 20s linear infinite reverse;
+    opacity: 0.6;
+    animation: secondOceanWave 20s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite reverse;
     animation-delay: -5s;
     z-index: -1;
+    transform-origin: center bottom;
+  }
+
+  /* Add a third wave for more depth */
+  .third-ocean-wave {
+    position: absolute;
+    width: 200%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1200 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0v46.29c47.79 22.2 103.59 32.17 158 28 70.36-5.37 136.33-33.31 206.8-37.5 73.84-4.36 147.54 16.88 218.2 35.26 69.27 18 138.3 24.88 209.4 13.08 36.15-6 69.85-17.84 104.45-29.34C989.49 25 1113-14.29 1200 52.47V0z' fill='%230EA5E9' fill-opacity='.1'/%3E%3C/svg%3E");
+    opacity: 0.5;
+    animation: thirdOceanWave 18s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+    animation-delay: -8s;
+    z-index: -1;
+    transform-origin: center bottom;
   }
 
   .glass-panel {
@@ -162,11 +177,72 @@
   }
 }
 
-@keyframes wave {
+/* Enhanced Ocean Wave Animations */
+@keyframes oceanWave {
   0% {
-    transform: translateX(0);
+    transform: translateX(0) translateY(0) scale(1);
+  }
+  25% {
+    transform: translateX(-10%) translateY(5px) scale(1.01);
+  }
+  50% {
+    transform: translateX(-25%) translateY(0) scale(1);
+  }
+  75% {
+    transform: translateX(-40%) translateY(-3px) scale(0.99);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translateX(-50%) translateY(0) scale(1);
+  }
+}
+
+@keyframes secondOceanWave {
+  0% {
+    transform: translateX(0) translateY(0) scale(1);
+  }
+  25% {
+    transform: translateX(-15%) translateY(-5px) scale(1.02);
+  }
+  50% {
+    transform: translateX(-25%) translateY(0) scale(1);
+  }
+  75% {
+    transform: translateX(-35%) translateY(8px) scale(0.98);
+  }
+  100% {
+    transform: translateX(-50%) translateY(0) scale(1);
+  }
+}
+
+@keyframes thirdOceanWave {
+  0% {
+    transform: translateX(0) translateY(0) scale(1);
+  }
+  30% {
+    transform: translateX(-20%) translateY(10px) scale(1.03);
+  }
+  60% {
+    transform: translateX(-35%) translateY(-5px) scale(0.97);
+  }
+  100% {
+    transform: translateX(-50%) translateY(0) scale(1);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    backgroundPosition: -200% 0;
+  }
+  100% {
+    backgroundPosition: 200% 0;
   }
 }
