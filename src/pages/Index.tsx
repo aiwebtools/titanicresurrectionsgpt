@@ -14,7 +14,13 @@ import ConsentPopup from '../components/ConsentPopup';
 const Index = () => {
   useEffect(() => {
     // Update page title
-    document.title = "Titanic Resurrections GPT - Speak with Titanic Passengers & Crew";
+    document.title = "Titanic Resurrections GPT - Speak with Titanic Passengers & Crew | Historical AI Experience";
+    
+    // Add meta description dynamically if needed
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Step back in time to 1912 and have authentic conversations with Titanic passengers and crew. Experience history through their eyes with this immersive AI tool by AI Web Tools.');
+    }
     
     // Create YouTube iframe API
     const tag = document.createElement('script');
@@ -26,7 +32,7 @@ const Index = () => {
   return (
     <div className="min-h-screen overflow-x-hidden bg-ocean-deep text-white">
       <Header />
-      <main>
+      <main role="main">
         <HeroSection />
         <FeaturesSection />
         <PassengersSection />

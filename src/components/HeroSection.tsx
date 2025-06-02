@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef } from 'react';
 import { ArrowDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -70,7 +71,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-screen pt-24 pb-16 flex flex-col items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen pt-24 pb-16 flex flex-col items-center justify-center overflow-hidden" itemScope itemType="https://schema.org/WebPageElement">
       {/* Animated ocean waves background with enhanced animation */}
       <div className="ocean-wave"></div>
       <div className="second-ocean-wave"></div>
@@ -83,16 +84,17 @@ const HeroSection = () => {
             <span className="inline-block py-1 px-3 rounded-full bg-ocean-medium/20 text-ice-light text-sm mb-4">
               Step Back in Time • 1912
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-playfair font-bold mb-6 title-gradient leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-playfair font-bold mb-6 title-gradient leading-tight" itemProp="headline">
               Speak With Titanic Passengers & Crew
             </h1>
-            <p className="text-lg md:text-xl text-ice-light/90 mb-8 max-w-2xl mx-auto lg:mx-0">
+            <p className="text-lg md:text-xl text-ice-light/90 mb-8 max-w-2xl mx-auto lg:mx-0" itemProp="description">
               Experience an immersive historical journey through interactive conversations with those who lived through the Titanic disaster. Hear their stories, in their own words.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Button 
                 className="gold-button text-base"
                 onClick={() => window.open("https://chatgpt.com/g/g-67d4a5f65f64819196609472b3b6ed56-titanic-resurrections-gpt", "_blank")}
+                aria-label="Start your Titanic Resurrections GPT experience"
               >
                 Experience Titanic Resurrections GPT NOW
               </Button>
@@ -100,6 +102,7 @@ const HeroSection = () => {
                 variant="outline" 
                 className="border-ocean-light/30 hover:bg-ocean-light/10 text-white"
                 onClick={scrollToContent}
+                aria-label="Learn more about Titanic Resurrections GPT features"
               >
                 Learn More
               </Button>
@@ -117,7 +120,7 @@ const HeroSection = () => {
                   width: '100%',
                   height: '100%',
                   minHeight: isMobile ? '200px' : '300px'
-                }}></div>
+                }} aria-label="Titanic Resurrections GPT demonstration video"></div>
               </div>
             </div>
             <div className="absolute -bottom-6 -right-6 h-24 w-24 bg-gold/10 rounded-full blur-2xl"></div>
@@ -131,6 +134,7 @@ const HeroSection = () => {
         <button 
           onClick={scrollToContent}
           className="flex flex-col items-center text-white/70 hover:text-white transition-colors"
+          aria-label="Scroll down to discover more features"
         >
           <span className="text-sm mb-2">Discover More</span>
           <ArrowDown className="animate-bounce h-5 w-5" />
