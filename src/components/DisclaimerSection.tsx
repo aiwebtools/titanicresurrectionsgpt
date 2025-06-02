@@ -16,6 +16,12 @@ const DisclaimerSection = () => {
 
         <div className="glass-panel rounded-xl p-8 max-w-4xl mx-auto">
           <div className="prose prose-invert max-w-none prose-headings:font-playfair prose-headings:text-gold-light prose-p:text-ice-light/80">
+            <div className="bg-ocean-medium/10 border border-ocean-light/20 rounded-lg p-4 mb-6">
+              <p className="text-gold-light font-semibold text-center mb-0">
+                ⚠️ For Informational, Educational, and Research Purposes Only
+              </p>
+            </div>
+            
             <h3>Historical Accuracy</h3>
             <p>
               While Titanic Resurrections GPT strives for historical accuracy, it is an AI interpretation based on available historical records. Some interactions may include creative interpretations where direct historical evidence is limited. We've made every effort to ensure authenticity, but this experience should be considered a supplement to, not a replacement for, traditional historical research.
@@ -48,7 +54,7 @@ const DisclaimerSection = () => {
             
             <h3>Terms of Service & Privacy Policy</h3>
             <p>
-              Use of this service is subject to OpenAI's <a href="https://openai.com/policies/privacy-policy/" className="text-ocean-light hover:text-gold transition-colors">Privacy Policy</a> and <a href="https://aiwebtools.ai/terms-of-services" className="text-ocean-light hover:text-gold transition-colors">Terms of Service</a>.
+              Use of this service is subject to OpenAI's <a href="https://openai.com/policies/privacy-policy/" className="text-ocean-light hover:text-gold transition-colors">Privacy Policy</a> and <a href="https://aiwebtools.lovable.app/disclaimers" className="text-ocean-light hover:text-gold transition-colors">Terms of Service</a>.
             </p>
           </div>
         </div>
