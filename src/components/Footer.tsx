@@ -152,7 +152,7 @@ const Footer = () => {
           <p className="text-ice-light/60 text-sm">
             © 2025 
             <a 
-              href="https://www.aiwebtools.ai" 
+              href="https://aiwebtools.lovable.app/?via=aiwebtools" 
               className="hover:text-gold transition-colors duration-200"
             > AI WEB TOOLS LLC </a> 
             All rights reserved.
