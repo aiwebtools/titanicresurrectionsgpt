@@ -159,7 +159,7 @@ const Footer = () => {
           </p>
           
           <a 
-            href="https://www.aiwebtools.ai" 
+            href="https://aiwebtools.lovable.app/?via=aiwebtools" 
             className="mt-4 md:mt-0 bg-gradient-to-r from-ocean-light to-ocean-medium text-white px-6 py-2 rounded-full hover:shadow-lg hover:shadow-ocean-light/20 transition-all duration-300"
           >
             More AI Tools
