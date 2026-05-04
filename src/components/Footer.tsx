@@ -12,6 +12,8 @@ const Footer = () => {
           <div>
             <a 
               href="https://chatgpt.com/g/g-67d4a5f65f64819196609472b3b6ed56-titanic-resurrections-gpt" 
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center group mb-4"
             >
               <div className="flex items-center mr-3">
@@ -34,6 +36,8 @@ const Footer = () => {
               <li>
                 <a 
                   href="https://chatgpt.com/g/g-67d4a5f65f64819196609472b3b6ed56-titanic-resurrections-gpt" 
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-ice-light/70 hover:text-gold transition-colors duration-200"
                 >
                   Titanic Resurrections GPT
@@ -58,6 +62,8 @@ const Footer = () => {
               <li>
                 <a 
                   href="https://aiwebtools.lovable.app/?via=aiwebtools" 
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-ice-light/70 hover:text-gold transition-colors duration-200"
                 >
                   More AI Tools
@@ -153,6 +159,8 @@ const Footer = () => {
             © 2025 
             <a 
               href="https://aiwebtools.lovable.app/?via=aiwebtools" 
+              target="_blank"
+              rel="noopener noreferrer"
               className="hover:text-gold transition-colors duration-200"
             > AI WEB TOOLS LLC </a> 
             All rights reserved.
@@ -160,6 +168,8 @@ const Footer = () => {
           
           <a 
             href="https://aiwebtools.lovable.app/?via=aiwebtools" 
+            target="_blank"
+            rel="noopener noreferrer"
             className="mt-4 md:mt-0 bg-gradient-to-r from-ocean-light to-ocean-medium text-white px-6 py-2 rounded-full hover:shadow-lg hover:shadow-ocean-light/20 transition-all duration-300"
           >
             More AI Tools
