@@ -56,6 +56,8 @@ const Header = () => {
           <nav className="hidden md:flex items-center space-x-8">
             <a 
               href="https://chatgpt.com/g/g-67d4a5f65f64819196609472b3b6ed56-titanic-resurrections-gpt" 
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-white hover:text-gold transition-colors duration-200"
             >
               Home
