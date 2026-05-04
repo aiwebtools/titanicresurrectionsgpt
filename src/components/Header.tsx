@@ -76,6 +76,8 @@ const Header = () => {
             </a>
             <a 
               href="https://aiwebtools.lovable.app/?via=aiwebtools" 
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-white hover:text-gold transition-colors duration-200"
             >
               More AI Tools
