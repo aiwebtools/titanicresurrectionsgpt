@@ -62,6 +62,8 @@ const Footer = () => {
               <li>
                 <a 
                   href="https://aiwebtools.lovable.app/?via=aiwebtools" 
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-ice-light/70 hover:text-gold transition-colors duration-200"
                 >
                   More AI Tools
