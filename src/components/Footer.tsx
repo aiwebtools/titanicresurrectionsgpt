@@ -36,6 +36,8 @@ const Footer = () => {
               <li>
                 <a 
                   href="https://chatgpt.com/g/g-67d4a5f65f64819196609472b3b6ed56-titanic-resurrections-gpt" 
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-ice-light/70 hover:text-gold transition-colors duration-200"
                 >
                   Titanic Resurrections GPT
