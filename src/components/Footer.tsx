@@ -12,6 +12,8 @@ const Footer = () => {
           <div>
             <a 
               href="https://chatgpt.com/g/g-67d4a5f65f64819196609472b3b6ed56-titanic-resurrections-gpt" 
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center group mb-4"
             >
               <div className="flex items-center mr-3">
