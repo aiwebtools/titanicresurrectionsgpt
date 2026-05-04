@@ -159,6 +159,8 @@ const Footer = () => {
             © 2025 
             <a 
               href="https://aiwebtools.lovable.app/?via=aiwebtools" 
+              target="_blank"
+              rel="noopener noreferrer"
               className="hover:text-gold transition-colors duration-200"
             > AI WEB TOOLS LLC </a> 
             All rights reserved.
@@ -166,6 +168,8 @@ const Footer = () => {
           
           <a 
             href="https://aiwebtools.lovable.app/?via=aiwebtools" 
+            target="_blank"
+            rel="noopener noreferrer"
             className="mt-4 md:mt-0 bg-gradient-to-r from-ocean-light to-ocean-medium text-white px-6 py-2 rounded-full hover:shadow-lg hover:shadow-ocean-light/20 transition-all duration-300"
           >
             More AI Tools
